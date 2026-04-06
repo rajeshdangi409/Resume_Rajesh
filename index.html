@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajesh Dangi | DevOps Engineer</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #0f172a;
+    color: white;
+    transition: 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+    background: #1e293b;
+}
+
+h1 { margin: 0; }
+
+section {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    color: #38bdf8;
+}
+
+.card {
+    background: #1e293b;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Light Mode */
+.light {
+    background: white;
+    color: black;
+}
+.light .card {
+    background: #eee;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Rajesh Dangi</h1>
+    <p>DevOps Engineer</p>
+
+    <!-- Toggle Button -->
+    <button onclick="toggleTheme()">Toggle Mode</button>
+
+    <!-- Typing Animation -->
+    <p id="typing"></p>
+
+    <p>
+        📧 rajeshdangi445566@gmail.com |
+        📞 +91 8149769715
+    </p>
+
+    <a href="Rajesh_Dangi_Resume.pdf" download>
+        <button>Download Resume</button>
+    </a>
+</header>
+
+<section>
+<h2>About Me</h2>
+<p>
+Motivated DevOps fresher with AWS, Terraform, Docker, Kubernetes knowledge.
+</p>
+</section>
+
+<section>
+<h2>Skills</h2>
+
+<p>AWS</p>
+<div style="background:#333">
+<div style="width:90%;background:#38bdf8;height:10px"></div>
+</div>
+
+<p>Terraform</p>
+<div style="background:#333">
+<div style="width:85%;background:#38bdf8;height:10px"></div>
+</div>
+
+<p>Docker</p>
+<div style="background:#333">
+<div style="width:80%;background:#38bdf8;height:10px"></div>
+</div>
+
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<div class="card">
+<h3>AWS Infra with Terraform</h3>
+<p>EC2, ALB, RDS deployment using Terraform</p>
+</div>
+
+<div class="card">
+<h3>Docker App on AWS</h3>
+<p>Flask app deployed on EKS</p>
+</div>
+
+<div class="card">
+<h3>CI/CD Jenkins</h3>
+<p>Automated pipeline using Jenkins</p>
+</div>
+
+</section>
+
+<section>
+<h2>GitHub Stats</h2>
+<img src="https://github-readme-stats.vercel.app/api?username=rajeshdangi409&show_icons=true&theme=dark">
+</section>
+
+<section>
+<h2>Resume Preview</h2>
+<iframe src="Rajesh_Dangi_Resume.pdf" width="100%" height="400px"></iframe>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>GitHub: github.com/rajeshdangi409</p>
+</section>
+
+<!-- JavaScript -->
+<script>
+
+// Dark Mode Toggle
+function toggleTheme() {
+    document.body.classList.toggle("light");
+}
+
+// Typing Animation
+const text = ["DevOps Engineer", "AWS Specialist", "Terraform Expert"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+    let element = document.getElementById("typing");
+
+    if (i < text.length) {
+        if (!isDeleting && j <= text[i].length) {
+            current = text[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+            current = text[i].substring(0, j--);
+        }
+
+        element.innerHTML = current;
+
+        if (j === text[i].length) isDeleting = true;
+        if (j === 0) { isDeleting = false; i++; }
+
+        setTimeout(type, isDeleting ? 50 : 100);
+    }
+}
+
+type();
+
+</script>
+
+</body>
+</html>
