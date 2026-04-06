@@ -3,61 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajesh Dangi | DevOps Engineer</title>
+<title>Rajesh Dangi | DevOps Portfolio</title>
 
 <style>
-body {
-    font-family: Arial;
+* {
     margin: 0;
-    background: #0f172a;
-    color: white;
-    transition: 0.3s;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* Header */
 header {
     text-align: center;
-    padding: 40px;
-    background: #1e293b;
+    padding: 60px 20px;
 }
 
-h1 { margin: 0; }
-
-section {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
+h1 {
+    font-size: 2.8rem;
 }
 
-h2 {
+#typing {
     color: #38bdf8;
+    margin: 10px 0;
 }
 
+/* Buttons */
+.btn {
+    background: #38bdf8;
+    padding: 10px 18px;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* Glass Cards */
 .card {
-    background: #1e293b;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
 }
 
-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Skills */
+.skill {
+    margin: 10px 0;
+}
+.bar {
+    height: 10px;
+    background: #38bdf8;
+    border-radius: 10px;
+}
+
+/* Toggle */
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
 }
 
 /* Light Mode */
 .light {
-    background: white;
+    background: #f8fafc;
     color: black;
 }
 .light .card {
-    background: #eee;
+    background: rgba(0,0,0,0.05);
 }
 </style>
 
@@ -65,49 +97,33 @@ button {
 
 <body>
 
+<button class="toggle" onclick="toggleTheme()">🌙</button>
+
 <header>
     <h1>Rajesh Dangi</h1>
-    <p>DevOps Engineer</p>
-
-    <!-- Toggle Button -->
-    <button onclick="toggleTheme()">Toggle Mode</button>
-
-    <!-- Typing Animation -->
     <p id="typing"></p>
 
-    <p>
-        📧 rajeshdangi445566@gmail.com |
-        📞 +91 8149769715
-    </p>
-
-    <a href="Rajesh_Dangi_Resume.pdf" download>
-        <button>Download Resume</button>
-    </a>
+    <a href="Rajesh_Dangi_Resume.pdf" class="btn">Download Resume</a>
+    <a href="https://github.com/rajeshdangi409" class="btn" target="_blank">GitHub</a>
 </header>
 
 <section>
 <h2>About Me</h2>
+<div class="card">
 <p>
-Motivated DevOps fresher with AWS, Terraform, Docker, Kubernetes knowledge.
+DevOps fresher skilled in AWS, Terraform, Docker, Kubernetes and CI/CD pipelines.
 </p>
+</div>
 </section>
 
 <section>
 <h2>Skills</h2>
 
-<p>AWS</p>
-<div style="background:#333">
-<div style="width:90%;background:#38bdf8;height:10px"></div>
-</div>
-
-<p>Terraform</p>
-<div style="background:#333">
-<div style="width:85%;background:#38bdf8;height:10px"></div>
-</div>
-
-<p>Docker</p>
-<div style="background:#333">
-<div style="width:80%;background:#38bdf8;height:10px"></div>
+<div class="card">
+<div class="skill">AWS<div class="bar" style="width:90%"></div></div>
+<div class="skill">Terraform<div class="bar" style="width:85%"></div></div>
+<div class="skill">Docker<div class="bar" style="width:80%"></div></div>
+<div class="skill">Kubernetes<div class="bar" style="width:75%"></div></div>
 </div>
 
 </section>
@@ -116,51 +132,46 @@ Motivated DevOps fresher with AWS, Terraform, Docker, Kubernetes knowledge.
 <h2>Projects</h2>
 
 <div class="card">
-<h3>AWS Infra with Terraform</h3>
-<p>EC2, ALB, RDS deployment using Terraform</p>
+<h3>AWS Infrastructure with Terraform</h3>
+<p>Automated scalable infra using EC2, ALB, RDS.</p>
 </div>
 
 <div class="card">
-<h3>Docker App on AWS</h3>
-<p>Flask app deployed on EKS</p>
+<h3>Dockerized Python App</h3>
+<p>Flask app deployed on EKS with Docker & ECR.</p>
 </div>
 
 <div class="card">
-<h3>CI/CD Jenkins</h3>
-<p>Automated pipeline using Jenkins</p>
+<h3>CI/CD with Jenkins</h3>
+<p>Automated pipeline for build & deployment.</p>
 </div>
 
 </section>
 
 <section>
 <h2>GitHub Stats</h2>
-<img src="https://github-readme-stats.vercel.app/api?username=rajeshdangi409&show_icons=true&theme=dark">
+<div class="card">
+<img src="https://github-readme-stats.vercel.app/api?username=rajeshdangi409&show_icons=true&theme=tokyonight">
+</div>
 </section>
 
 <section>
-<h2>Resume Preview</h2>
+<h2>Resume</h2>
+<div class="card">
 <iframe src="Rajesh_Dangi_Resume.pdf" width="100%" height="400px"></iframe>
+</div>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>GitHub: github.com/rajeshdangi409</p>
-</section>
-
-<!-- JavaScript -->
 <script>
-
-// Dark Mode Toggle
 function toggleTheme() {
     document.body.classList.toggle("light");
 }
 
-// Typing Animation
-const text = ["DevOps Engineer", "AWS Specialist", "Terraform Expert"];
+const text = ["DevOps Engineer", "AWS | Terraform | Kubernetes"];
 let i = 0, j = 0, current = "", isDeleting = false;
 
 function type() {
-    let element = document.getElementById("typing");
+    let el = document.getElementById("typing");
 
     if (i < text.length) {
         if (!isDeleting && j <= text[i].length) {
@@ -169,7 +180,7 @@ function type() {
             current = text[i].substring(0, j--);
         }
 
-        element.innerHTML = current;
+        el.innerHTML = current;
 
         if (j === text[i].length) isDeleting = true;
         if (j === 0) { isDeleting = false; i++; }
@@ -177,9 +188,7 @@ function type() {
         setTimeout(type, isDeleting ? 50 : 100);
     }
 }
-
 type();
-
 </script>
 
 </body>
